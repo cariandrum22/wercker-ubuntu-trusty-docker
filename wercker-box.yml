@@ -1,0 +1,17 @@
+name: docker
+version: 0.1
+description: Ubuntu 12.04 upgraded to 14.04 and install docker
+type: main
+platform: ubuntu@12.04
+keywords:
+  - ubuntu
+  - trusty
+  - docker
+script: |
+  sudo apt-get update
+  sudo apt-get install -y update-manager-core
+  sudo do-release-upgrade -f DistUpgradeViewNonInteractive -m server -d
+  sudo apt-get install -y aptitude
+  sudo aptitude update
+  sudo aptitude safe-upgrade
+  sudo install docker.io
